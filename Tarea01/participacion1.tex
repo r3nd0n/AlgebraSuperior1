@@ -1,0 +1,240 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage[margin=1cm, top=1.5cm, bottom=1.5cm]{geometry}
+
+\tcbuselibrary{breakable}
+
+\title{\textbf{Álgebra Superior I: Tarea 01}}
+\author{Rendón Ávila Jesús Mateo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+\vspace{3cm}
+\includegraphics[width=0.195\textwidth]{Escudo.png}
+\hspace{0.5cm}
+\includegraphics[width=0.2\textwidth]{logo_ciencias.png}
+\end{center}
+\begin{center}
+    \vspace{1cm}
+    Universidad Nacional Autónoma de México\\
+    Facultad de Ciencias\\
+    Profesora: Cristina Angélica Núñez Rodríguez\\
+\end{center}
+
+\newpage
+
+%
+% Ejercicio 1
+%
+\textbf{1.} Encuentra una proposición adecuada para describir a cada uno de los siguientes conjuntos.
+\begin{enumerate}[label=\alph*)]
+    \item $A = \{30, 31, 32, ...\}$\\
+    $A = \{x \in \mathbb{N} \mid x \geq 30\}$
+    \item $B = \{-1, 2, -3, 4, -5, 6, -7, ...\}$\\
+    $B = \{x \in \mathbb{N}-\{0\} \mid \text{ si } x \mod 2 \neq 0 \Rightarrow -1(x)\}$
+    \item $C = \{-1, 3, -5, 7, -9, 11, ...\}$\\
+    $C = \{x \in \mathbb{N} - \{0\} \mid \text{ si } \}$
+    \item $D = \{4, 7, 12, 19, ...\}$\\
+    $D = \{...\}$
+\end{enumerate}
+
+%
+% Ejercicio 2
+%
+\textbf{2.} Describe los siguientes conjuntos listando todos sus elementos.
+\begin{enumerate}[label=\alph*)]
+    \item $\{x \in \mathbb{N} \mid x^2 - 3x = 0\}$\\
+    $\{3\}$
+
+    \item $\{n^3 + n^2 \mid n \in \{0, 1, 2, 3, 4\}\}$\\
+    $\{0, 2, 12, 36, 80\}$
+
+    \item $\{\frac{1}{n^2 + n}\mid n \text{ es un positivo impar y } n \in \{1, 2, 3, 4, 5, 7\}\}$\\
+    $\{\frac{1}{2}, \frac{1}{12}, \frac{1}{30}, \frac{1}{56}\}$
+
+    \item $\{l \in \mathbb{Z} \mid l = 2n -1 \text{ y } -3 \leq n \leq 9\}$\\
+    $\{-7, -5, -3, -1, 1, 3, 5, 7, 9, 11, 13, 15, 17\}$
+\end{enumerate}
+
+%
+% Ejercicio 3
+%
+\textbf{3.} Sea $\mathbb{N}$ el conjunto de los números naturales. Determinar $ A \cup B$, $A \cap B$ y $A^c$ en:
+\begin{enumerate}[label=\alph*)]
+    \item $A = \{n \mid n \text{ es par}\}$ y $B = \{n \mid n < 14\}$\\
+    $A \cup B = \{2, 4, 6, 8, 10, ...\}$\\
+    $A \cap B = \{2, 4, 6, 8, 10, 12\}$\\
+    $A^c = \{1, 3, 5, 7, 9, 11, ...\}$
+
+    \item $A = \{n \mid n^2 > 2n - 1\}$, $B = \{n \mid n^2 = 2n + 3\}$\\
+    $A \cup B =  \{2, 3, 4, 5, 6, ...\}$\\
+    $A \cap B = \{9\}$\\
+    $A^c = \{0, 1\}$
+\end{enumerate}
+
+%
+% Ejercicio 4
+%
+\textbf{4.} Dibuja el diagrama de Venn para el siguiente problema:
+\\
+
+Un grupo de jóvenes fue entrevistado acerca de sus preferencias por diferentes medios
+de transporte: bicicleta, motocicleta y automóvil. Los datos de las encuestas fueron los
+siguientes:
+\begin{itemize}
+    \item Motocilceta solamente 5.
+    \item Motocicleta 38.
+    \item No gustan del automóvil 9.
+    \item Motocicleta y bicicleta pero no automóvil 3.
+    \item Motocicleta y automóvil pero no bicicleta 20.
+    \item No gustan de la bicicleta 72.
+    \item No gustan de las tres cosas 19.
+    \item No gustan de la motocicleta 61.
+\end{itemize}
+
+Determinar: 
+
+\begin{enumerate}[label=\alph*)]
+    \item ¿Cuál fue el número de personas entrevistadas?\\
+    99 personas
+    \item ¿A cuántos les gusta la bicicleta solamente?\\
+    4 personas
+    \item ¿A cuántos les gusta el automóvil solamente?\\
+    34 personas
+    \item ¿A cuántos les gustan las tres cosas?\\
+    10 personas
+    \item ¿A cuántos les gusta la bicicleta y el automóvil pero no la motocicleta?\\
+    4 personas
+\end{enumerate}
+
+%
+% Ejercicio 5
+%
+\textbf{5.} Sean $A$ y $B$ conjuntos. Prueba que:
+\begin{enumerate}[label=\alph*)]
+    \item $A - B = B^c - A^c$
+
+    $A - B \Longleftrightarrow A \cap B^c$ \textit{por propiedad de la diferencia}\\
+    $A \cap B^c \Longleftrightarrow B^c \cap A$ \textit{por conmutatividad de la intersección}\\
+    $B^c \cap A \Longleftrightarrow B^c - A^c$ \textit{por propiedad de la diferencia}
+
+    \item $B \subseteq A \Longleftrightarrow (A - B) \cup B = A$
+
+    $\subseteq)$ Sea $x \in B$ por definición de subconjunto $x \in A$\\
+    como $x \in A$ y $x \in B$ entonces $x \notin A - B$\\
+    como $x \notin A - B$ y $x \in B$ entonces $x \in (A - B) \cup B$\\
+    y por hipotesis, como $B \subseteq A$ entonces $B \cup (A - B) = A$\\
+    \\
+    $\supseteq)$ Sea $x \in (A - B) \cup B$ entonces\\
+    $x \in A - B$ o $x \in B$\\
+    como por nuestra hipotesis $(A - B) \cup B = A$ entonces $x \in A$\\
+    por lo que debe ser $x \in A - B$
+    como $x \notin B$ pero si $x \in (A - B) \cup B$ entonces debe ser $B \subseteq A$\\
+    \\
+    $\therefore B \subseteq A \Longleftrightarrow (A - B) \cup B = A$
+\end{enumerate}
+
+%
+% Ejercicio 13
+%
+\textbf{13.} Determina cuáles de las siguientes oraciones son proposiciones:
+
+\begin{enumerate}[label=\alph*)]
+    \item Algunos números enteros son negativos.\\
+    Es una proposición con valor de verdad $V$.
+    \item El número 15 es un número par.\\
+    Es una proposición con valor de verdad $F$.
+    \item ¿Qué hora es?\\
+    No es una proposición pues no se puede determinar veracidad.
+    \item En los números enteros, $11 + 6 \neq 12$\\
+    Si es proposición con valor de verdad $V$.
+    \item La tierra es casi una esfera.\\
+    Si es una proposición con valor de verdad $V$.
+\end{enumerate}
+
+%
+% Ejercicio 14
+%
+\textbf{14.} Si $P$ y $R$ representan proposiciones verdaderas y $Q$ y $S$ representan proposiciones falsas,
+encuentra el valor de verdad de las proposiciones compuestas dadas a continuación:
+
+\begin{enumerate}[label=\alph*)]
+    \item $\neg P \land R$\\
+    $F \land V = F$
+
+    \item $\neg [\neg P \land (\neg Q \land P)]$\\
+    $\neg[F \land (V \land V)] = \neg[F \land V] = \neg F = V$
+
+    \item $(P \land R) \lor \neg Q$\\
+    $(V \land V) \lor V = V \lor V = V$
+
+    \item $P \Longrightarrow (Q \Longrightarrow R)$\\
+    $V \Longrightarrow (F \Longrightarrow V) = V \Longrightarrow V = V$
+
+    \item $[(P \land \neg Q) \Longrightarrow (Q \land R)] \Longrightarrow (S \lor \neg Q)$\\
+    $[(V \land V) \Longrightarrow (F \land V)] \Longrightarrow (F \lor V) = [V \Longrightarrow F] \Longrightarrow V = F \Longrightarrow V = V$
+\end{enumerate}
+
+%
+% Ejercicio 15
+%
+\textbf{15.} Responde:
+
+\begin{enumerate}[label=\alph*)]
+    \item Si la proposición $Q$ es verdadera, determine todas las asiganciones de valores de
+    verdad para las proposiciones $P$, $R$ y $S$ para la proposición:
+    \[\{Q \Longrightarrow [(\neg P \lor R) \land (\neg S)]\} \land \{\neg S \Longrightarrow (\neg R \land Q)\}\]
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+            \hline
+            $Q$ & $P$ & $R$ & $S$ & $\neg P$ & $\neg R$ & $\neg S$\\
+            \hline
+            V & V & V & V & F & F & F\\
+            V & V & V & F & F & F & V\\
+            V & V & F & V & F & V & F\\
+            V & V & F & F & F & V & V\\
+            V & F & V & V & V & F & F\\
+            V & F & V & F & V & F & V\\
+            V & F & F & V & V & V & F\\
+            V & F & F & F & V & V & V\\ 
+            \hline           
+        \end{tabular}
+        \caption{Tabla de valor de las variables}
+    \end{table}
+    \newpage
+
+        \item Lo mismo que en a), pero suponiendo que $Q$ es falsa.\\
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                \hline
+                $Q$ & $P$ & $R$ & $S$ & $\neg P$ & $\neg R$ & $\neg S$\\
+                \hline
+                F & V & V & V & F & F & F\\
+                F & V & V & F & F & F & V\\
+                F & V & F & V & F & V & F\\
+                F & V & F & F & F & V & V\\
+                F & F & V & V & V & F & F\\
+                F & F & V & F & V & F & V\\
+                F & F & F & V & V & V & F\\
+                F & F & F & F & V & V & V\\ 
+                \hline           
+            \end{tabular}
+            \caption{Tabla de valor de las variables}
+        \end{table}
+\end{enumerate}
+
+\end{document}
