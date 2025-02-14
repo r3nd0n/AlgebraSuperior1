@@ -10,6 +10,7 @@
 \usepackage{enumitem}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{colortbl}
 \usepackage{xcolor}
 \usepackage[margin=1cm, top=1.5cm, bottom=1.5cm]{geometry}
 
@@ -264,6 +265,66 @@ Determinar:
     \[A \cap C = 2 \neq \varnothing\]
     cumpliendo la igualdad $A \cap (B \cup C) = A \cap C$ con $A \cap B \neq \varnothing$. Por lo tanto hemos exibido un elemento 
     que no cumple la proposición.
+
+    \item $A - (B - C) = (A - B) - C$\\
+
+    Proponemos los conjuntos:
+    \[A = \{3, 4, 5, 9, 10, 11, 12\}, B = \{3, 4, 5, 6, a, b, c\} \text{ y } C = \{5, 6, 7, 8, 9\}\]
+    Primero realizamos el conjunto $B - C$, que resulta ser $\{3, 4, a, b, c\}$. con el podemos realizar 
+    el conjunto $ A - (B - C) = \{5, 9, 10, 11, 12\}$.\\
+
+    Ahora podemos realizar el conjunto $A - B = \{9, 10, 11, 12\}$, de aquí podemos formar el 
+    conjunto $(A - B) - C = \{10, 11, 12\}$\\
+
+    Como es evidente $A - (B - C) \neq (A - B) - C$, los conjuntos propuestos prueban la falsedad de la proposición.
+\end{enumerate}
+
+%
+% ejercicio 10
+%
+\textbf{10.} Sean $A$ y $B$ dos conjuntos. Demuestra que:
+
+\begin{enumerate}[label=\alph*)]
+    \item $A \subset B \Longleftrightarrow \mathcal{P}(A) \subset \mathcal{P}(B)$\\
+
+    \textit{Hipotesis.} $A \subset B$, enotnces $\forall x \in A \Longrightarrow x \in B$\\
+
+    Si tuvieramos $x \in A$, por nuestra hipotesis será $x \in B$.\\
+
+    Por la definición de $\mathcal{P}(A)$ tenemos que $\mathcal{P}(A) = \{x \mid x \subseteq A\}$, y como sabemos $A \subset B$ entonces
+    todo subconjunto de de $A$ es tambien subconjunto de $B$, así:
+    \[\mathcal{P}(A) \subset \mathcal{P}(B)\]
+
+    \item Si $A \cap B = \varnothing \Longrightarrow \mathcal{P}(A - B) = [\mathcal{P}(A) - \mathcal{P}(B)] \cup \{\varnothing\}$
+
+    Si $A \cap B = \varnothing$ entonces $\forall x \in A \Longrightarrow x \notin B$ y $\forall z \in B \Longrightarrow z \notin A$\\
+
+    $\subseteq)$\\
+    $P.D$ $\mathcal{P}(A - B) \subseteq [\mathcal{P}(A) - \mathcal{P}(B)] \cup \{\varnothing\}$\\
+    
+    Como $A \cap B = \varnothing$, por la definición de \textit{diferencia de conjuntos} sabemos que se cumple $A - B = A$. De lo anterior 
+    afirmamos que $ \mathcal{P}(A - B) = \mathcal{P}(A)$\\
+
+    Como $A$ y $B$ son conjuntos disjuntos, entonces sus potencias $\mathcal{P}(A)$ y $\mathcal{P}(B)$ sólo comparten un 
+    elemento que es el conjunto vacío $\varnothing$. Así:
+    \[\mathcal{P}(A) - \mathcal{P}(B) = \mathcal{P}(A) - \{\varnothing\}\]
+    De lo anterior tenemos $\mathcal{P}(A - B) \subseteq [\mathcal{P}(A) - \mathcal{P}(B)] \cup \{\varnothing\}$\\
+
+    $\supseteq)$\\
+    $P.D$ $[\mathcal{P}(A) - \mathcal{P}(B)] \cup \{\varnothing\} \subseteq \mathcal{P}(A - B)$\\
+
+    Como sabemos por hipotesis que $A \cap B = \varnothing$ podemos deducir que $A - B = A$.\\
+
+    De lo anteriro podemos decir:
+    \[\mathcal{P}(A) - \mathcal{P}(B) = \mathcal{P}(A) - \{\varnothing\}\]
+    \[(\mathcal{P}(A) - \{\varnothing\}) \cup {\varnothing} = \mathcal{P}(A)\]
+
+    De nuevo por hipótesis sabemos que $A - B = A$, entonces $\mathcal{P}(A) = \mathcal{P}(A - B)$\\
+
+    Así hemos demostrado que $[\mathcal{P}(A) - \mathcal{P}(B)] \cup \{\varnothing\} \subseteq \mathcal{P}(A - B)$\\
+
+    $\therefore$ si $A \cap B = \varnothing \Longrightarrow \mathcal{P}(A - B) = [\mathcal{P}(A) - \mathcal{P}(B)] \cup \{\varnothing\}$
+
 \end{enumerate}
 
 %
@@ -316,45 +377,35 @@ encuentra el valor de verdad de las proposiciones compuestas dadas a continuaci�
     \item Si la proposición $Q$ es verdadera, determine todas las asiganciones de valores de
     verdad para las proposiciones $P$, $R$ y $S$ para la proposición:
     \[\{Q \Longrightarrow [(\neg P \lor R) \land (\neg S)]\} \land \{\neg S \Longrightarrow (\neg R \land Q)\}\]
+    
+    Vamos a realizar una sola tabla para ahorra espacio:
     \begin{table}[h!]
         \centering
-        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|||c|||c|c|c||c||c||||c||||c|||c|||c|c|c|}
             \hline
-            $Q$ & $P$ & $R$ & $S$ & $\neg P$ & $\neg R$ & $\neg S$\\
+            $Q$ & $P$ & $R$ & $S$ & $\Longrightarrow$ & $\neg P$ & $\lor$ & $R$ & $\land$ & $\neg S$ & $\land$ & $\neg S$ & $\Longrightarrow$ & $\neg R$ & $\land$ & $Q$\\
             \hline
-            V & V & V & V & F & F & F\\
-            V & V & V & F & F & F & V\\
-            V & V & F & V & F & V & F\\
-            V & V & F & F & F & V & V\\
-            V & F & V & V & V & F & F\\
-            V & F & V & F & V & F & V\\
-            V & F & F & V & V & V & F\\
-            V & F & F & F & V & V & V\\ 
+            V & V & V & V & F & F & V & V & F & F & F & F & V & F & F & V\\
+            V & V & V & F & V & F & V & V & V & V & F & V & F & F & F & V\\
+            V & V & F & V & F & F & F & F & F & F & F & F & V & V & V & V\\
+            V & V & F & F & F & F & F & F & F & V & F & V & V & V & V & V\\
+            V & F & V & V & F & V & V & V & F & F & F & F & V & F & F & V\\
+            V & F & V & F & V & V & V & V & V & V & F & V & F & F & F & V\\
+            V & F & F & V & F & V & V & F & F & F & F & F & V & V & V & V\\
+            V & F & F & F & V & V & V & F & V & V & V & V & V & V & V & V\\
+            F & V & V & V & V & F & V & V & F & F & V & F & V & F & F & F\\
+            F & V & V & F & V & F & V & V & V & V & F & V & F & F & F & F\\
+            F & V & F & V & V & F & F & F & F & F & V & F & V & V & F & F\\
+            F & V & F & F & V & F & F & F & F & V & F & V & F & V & F & F\\
+            F & F & V & V & V & V & V & V & F & F & V & F & V & F & F & F\\
+            F & F & V & F & V & V & V & V & V & V & F & V & F & F & F & F\\
+            F & F & F & V & V & V & V & F & F & F & V & F & V & V & F & F\\
+            F & F & F & F & V & V & V & F & V & V & F & V & F & V & F & F\\
             \hline           
         \end{tabular}
         \caption{Tabla de valor de las variables}
     \end{table}
-    \newpage
-
-        \item Lo mismo que en a), pero suponiendo que $Q$ es falsa.\\
-        \begin{table}[h!]
-            \centering
-            \begin{tabular}{|c|c|c|c|c|c|c|c|}
-                \hline
-                $Q$ & $P$ & $R$ & $S$ & $\neg P$ & $\neg R$ & $\neg S$\\
-                \hline
-                F & V & V & V & F & F & F\\
-                F & V & V & F & F & F & V\\
-                F & V & F & V & F & V & F\\
-                F & V & F & F & F & V & V\\
-                F & F & V & V & V & F & F\\
-                F & F & V & F & V & F & V\\
-                F & F & F & V & V & V & F\\
-                F & F & F & F & V & V & V\\ 
-                \hline           
-            \end{tabular}
-            \caption{Tabla de valor de las variables}
-        \end{table}
+    
 \end{enumerate}
 
 \end{document}
