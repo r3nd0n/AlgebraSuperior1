@@ -175,8 +175,9 @@ Determinar:
     \end{align*}
 
     \item Si $A \subseteq B \Longrightarrow (A - C) \subseteq (B - C)$\\
+
     \textbf{Hipótesis}. $A \subseteq B$, entonces $x \in A \Longrightarrow x \in B$\\
-    \\
+    
     $PD$. $(A - C) \subseteq (B - C)$\\
     Sea $x \in A - C \Longrightarrow x \in A \land x \notin C$\\
     por hipotesis sabemos que $x \in B$ y por el paso anterior $x \notin C$\\
@@ -235,7 +236,7 @@ Determinar:
 %
 % Ejercicio 8
 %
-\textbf{8.} Sean $A$, $B$, $C \subseteq U$:
+\textbf{8.} Sean $A$, $B$, $C \subseteq \mathcal{U}$:
 \begin{enumerate}[label=\alph*)]
     \item Expresa $(A - B)^c$ en terminos de $\cup$ y -:\\
     $(\mathcal{U} - A) \cup B$
@@ -257,13 +258,13 @@ Determinar:
 \textbf{9.} Da un contraejemplo para probar la falsedad de los siguientes enunciados:
 
 \begin{enumerate}[label=\alph*)]
-    \item $A \cap (B \cup C) = A \cap B \Longrightarrow A \cap C = \varnothing$\\
+    \item $A \cap (B \cup C) = A \cap C \Longrightarrow A \cap C = \varnothing$\\
 
     Proponemos los conjuntos:
     \[A = \{1, 2, 3, 4\}, B = \{7, 8, 9\} \text{ y } C = \{2, 5, 6, 7\}\]
     Primero determinaremos $B \cup C$, que es el conjunto $\{2, 5, 6, 7, 8, 9\}$. Ahora, $A \cap (B \cup C) = \{2\}$, notemos que:
-    \[A \cap C = 2 \neq \varnothing\]
-    cumpliendo la igualdad $A \cap (B \cup C) = A \cap C$ con $A \cap B \neq \varnothing$. Por lo tanto hemos exibido un elemento 
+    \[A \cap C = \{2\} \neq \varnothing\]
+    cumpliendo la igualdad $A \cap (B \cup C) = A \cap C$ con $A \cap C \neq \varnothing$. Por lo tanto hemos exibido un elemento 
     que no cumple la proposición.
 
     \item $A - (B - C) = (A - B) - C$\\
