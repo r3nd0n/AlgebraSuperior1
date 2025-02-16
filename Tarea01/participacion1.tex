@@ -325,6 +325,41 @@ Determinar:
     Así hemos demostrado que $[\mathcal{P}(A) - \mathcal{P}(B)] \cup \{\varnothing\} \subseteq \mathcal{P}(A - B)$\\
 
     $\therefore$ si $A \cap B = \varnothing \Longrightarrow \mathcal{P}(A - B) = [\mathcal{P}(A) - \mathcal{P}(B)] \cup \{\varnothing\}$
+\end{enumerate}
+
+%
+% Ejercicio 11
+%
+\textbf{11.} Se define la siguiente operación $A \ast B = A^c \cup B^c$. Demuestra que:
+
+\begin{enumerate}[label=\alph*)]
+    \item $(A \ast B) \ast (A \ast B) = A \cap B$
+    \begin{align*}
+        (A \ast B) \ast (A \ast B) &= (A^c \cup B^c)^c \cup (A^c \cup B^c)^c\\
+        &=[(A^c)^c \cap (B^c)^c] \cup [(A^c)^c \cap (B^c)^c] \textit{ (por leyes De Morgan)}\\
+        &= (A \cap B) \cup (A \cap B) \textit{ (por propiedad de complemento)}\\
+        &= A \cap B
+    \end{align*}
+
+    \item $(A \ast A) \ast (B \ast B) = A \cup B$
+    \begin{align*}
+        (A \ast B) \ast (A \ast B) &= (A^c \cup A^c)^c \cup (B^c \cup B^c)^c\\
+        &=[(A^c)^c \cap (A^c)^c] \cup [(B^c)^c \cap (B^c)^c] \textit{ (por leyes De Morgan)}\\
+        &= (A \cap A) \cup (B \cap B) \textit{ (por propiedad de complemento)}\\
+        &= A \cup B
+    \end{align*}
+
+\end{enumerate}
+
+%
+% Ejercicio 12
+%
+\textbf{12.} Sean $A, B$ y $C$ conjuntos no vacíos. Demuestra las siguientes propiedades:
+
+\begin{enumerate}[label=\alph*)]
+    \item Si $A \subseteq B$ y $C \subseteq D \Longrightarrow (A \times C) \subseteq (B \times D)$\\
+
+    \item $(A \times B) - (C \times C) = [(A - C) \times B] \cup [A \times (B - C)]$\\
 
 \end{enumerate}
 
@@ -335,7 +370,7 @@ Determinar:
 
 \begin{enumerate}[label=\alph*)]
     \item Algunos números enteros son negativos.\\
-    Es una proposición con valor de verdad $V$.
+    Es una proposición pues podemos determinar su veracidad, tiene valor de verdad $V$.
     \item El número 15 es un número par.\\
     Es una proposición con valor de verdad $F$.
     \item ¿Qué hora es?\\
