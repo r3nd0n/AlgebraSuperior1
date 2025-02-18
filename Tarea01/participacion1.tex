@@ -359,8 +359,81 @@ Determinar:
 \begin{enumerate}[label=\alph*)]
     \item Si $A \subseteq B$ y $C \subseteq D \Longrightarrow (A \times C) \subseteq (B \times D)$\\
 
+    Hipotesis. $A \subseteq B$ y $C \subseteq D$\\
+
+    P.D. $(A \times C) \subseteq (B \times D)$\\
+
+    Sean $x \in A$ y $y \in C$, por hipotesis $x \in B$ y $y \in D$\\
+
+    $\Longrightarrow (x, y) \in A \times C$ y\\
+
+    $\Longrightarrow (x, y) \in B \times D$\\
+
+    $\therefore (A \times C) \subseteq (B \times D)$
+
     \item $(A \times B) - (C \times C) = [(A - C) \times B] \cup [A \times (B - C)]$\\
 
+    $\subseteq)$ P.D. $(A \times B) - (C \times C) \subseteq [(A - C) \times B] \cup [A \times (B - C)]$\\
+
+    Sea $(a, b) \in (A \times B) - (C \times C)$\\
+
+    $\Longrightarrow (a, b) \in A \times B$ y $(a, b) \notin C \times C$\\
+
+    $\Longrightarrow a \in A, b \in B$ para c procedemos por casos:
+    \begin{enumerate}[label=\roman*)]
+        \item $a \notin C$ y $b \in C$\\
+        \item $a \in C$ y $b \notin C$\\
+        \item $a \notin C$ y $b \notin C$
+    \end{enumerate}
+    Procedemos con i: tenemos $a \in A, b \in B$ y $a \notin C, b \in C$\\
+
+    $\Longrightarrow a \in A - C$ y $b \notin B - C$\\
+
+    $\Longrightarrow (a, b) \in (A - C) \times B$ y $(a, b) \notin A \times (B - C)$\\
+
+    $\Longrightarrow (a, b) \in [(A - C) \times B] \cup [A \times (B - C)]$\\
+
+    Procedemos con ii: $a \in A, b \in B$ y $a \in C, b \notin C$\\
+
+    $\Longrightarrow a \notin A - C$ y $b \in B - C$\\
+
+    $\Longrightarrow (a, b) \notin (A - C) \times B$ y $(a, b) \in A \times (B - C)$\\
+
+    $\Longrightarrow (a, b) \in [(A - C) \times B] \cup [A \times (B - C)]$\\
+
+    Procedemos con iii: $a \in A, b \in B$ y $a \notin C, b \notin C$\\
+
+    $\Longrightarrow a \in A - C$ y $b \in B - C$\\
+
+    $\Longrightarrow (a, b) \in (A - C) \times B$ y $(a, b) \in A \times (B - C)$\\
+
+    $\Longrightarrow (a, b) \in [(A - C) \times B] \cup [A \times (B - C)]$
+
+    Por lo tanto  $(A \times B) - (C \times C) \subseteq [(A - C) \times B] \cup [A \times (B - C)]$\\
+
+    $\supseteq)$ P.D. $[(A - C) \times B] \cup [A \times (B - C)] \subseteq (A \times B) - (C \times C)$\\
+
+    Sea $(a, b)$ en $[(A - C) \times B] \cup [A \times (B - C)]$\\
+
+    $\Longrightarrow (a, b) \in (A - C) \times B$ o $(a, b) \in A \times (B - C)$\\
+
+    i) $(a, b) \in (A - C) \times B$\\
+
+    $\Longrightarrow a \in A - C$ y $b \in B$\\
+
+    $\Longrightarrow a \in A, b \in B$ y $a \notin C$\\
+
+    $\Longrightarrow (a, b) \in A \times B$ y $(a, b) \notin C \times C$\\
+
+    ii) $(a, b) \in A \times (B - C)$\\
+
+    $\Longrightarrow a \in A$ y $b \in B - C$\\
+
+    $\Longrightarrow a \in A, b \in B$ y $b \notin C$\\
+
+    $\Longrightarrow (a, b) \in A \times B$ y $(a, b) \notin C \times C$\\
+
+    por lo tanto $[(A - C) \times B] \cup [A \times (B - C)] \subseteq (A \times B) - (C \times C)$
 \end{enumerate}
 
 %
