@@ -1,0 +1,249 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{venndiagram}
+\usepackage{venndiagram}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage[margin=1cm, top=1.5cm, bottom=1.5cm]{geometry}
+
+\tcbuselibrary{breakable}
+
+\title{\textbf{Álgebra Superior I: Tarea 01}}
+\author{Rendón Ávila Jesús Mateo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+\vspace{3cm}
+\includegraphics[width=0.195\textwidth]{Escudo.png}
+\hspace{0.5cm}
+\includegraphics[width=0.2\textwidth]{logo_ciencias.png}
+\end{center}
+\begin{center}
+    \vspace{1cm}
+    Universidad Nacional Autónoma de México\\
+    Facultad de Ciencias\\
+    Profesora: Cristina Angélica Núñez Rodríguez\\
+\end{center}
+
+\newpage
+
+%
+% Ejercicio 1
+%
+\textbf{1.} Determinar qué propiedades (reflexividad, simetría, antisimetría o transitividad) cumplen las siguientes
+relaciones y determinar cuáles son una relación de equivalencia o de orden (parcial o total).
+
+\begin{enumerate}[label=\alph*)]
+    \item $R = \{(x,y) \in \mathbb{R} \times \mathbb{R} | x-y \textit{ es múltiplo de 3}\}$
+
+    \textit{Reflexividad}. Como $0$ es múltiplo de cualquier número y ademas $\forall x \in \mathbb{R}$ se cumple que $x-x = 0$, entonces $R$ satisface reflexividad.\\
+
+    \textit{Simetría}. Si $(x-y)$ es un múltiplo de $3$, entonces $(y-x)$ también será múltiplo de $3$, en particular el inverso de $(x,y)$. De lo
+    anterior decimos que $R$ satisface la simetría.\\
+
+    \textit{Antisimetría}. La antisimetría no se cumple en $R$, basta dar el contraejemplo $(3,6)$ y $(6,3)$ donde $3 \neq 6$.\\
+
+    \textit{Transitividad}. Finalmente, la relación satisface la transitividad pues $\forall$ $(x-y), (y-z)$ que es multiplo de $3$, también el número $(x-z)$ satisface
+    el ser múltiplo de 3.\\
+
+    Por lo tanto $R$ es de equivalencia.
+
+    \item $R = \{(1,1),(2,2),(1,2),(2,1),(3,3),(3,4),(4,3),(4,4)\}$, donde $A = \{1,2,3,4\}$
+
+    \textit{Reflexividad}. Como $\forall x \in A, \text{ } \exists (x,x) \in R$ decimos que R es reflexiva.\\ 
+
+    \textit{Simetría}. Como $(1,2), (3,4) \in R$  y $(2,1), (4,3) \in R$ entonces R es simétrica, para los pares $(x,x)$ la simetría es por
+    vacuidad.\\
+
+    \textit{Antisimetría}. No se satisface.
+
+    \textit{Transitividad}. 
+    \begin{align*}
+        (1,1), (1,2)&\sim (1,2)\\
+        (2,2), (2,1)&\sim (2,1)\\
+        (1,2), (2,1)&\sim (1,1)\\
+        (2,1), (1,2)&\sim (2,2)\\
+    \end{align*}
+    Para el caso de $3$ y $4$ es similar, así $R$ es transitiva.\\
+    
+    Por lo tanto $R$ es de equivalencia.
+
+    \item $R = \{(1,1),(2,2),(3,3),(4,4),(1,2),(1,3),(1,4),(2,3)\}$, donde $A = \{1,2,3,4\}$
+
+    \textit{Reflexividad}. Como $\forall x \in A, \text{ } \exists (x,x) \in R$ decimos que R es reflexiva.\\ 
+
+    \textit{Simetría}. Como $(1,2) \in R$  y $(2,1) \notin R$, entonces R no es simétrica.\\
+
+    \textit{Antisimetría}. No se satisface.
+
+    \textit{Transitividad}. El caso trascendente es que $\exists (1,2), (2,3) \in R$ y tmabién $(1,3) \in R$\\
+
+    Por lo tanto R no es de equivalencia.\\
+
+    \item La relación en $A = \mathbb{R}$ definida por $a \sim b \Longleftrightarrow a \leq b$
+    \item La relación en $A = P(X)$ definida por $A \sim B \Longleftrightarrow A \subseteq B$
+\end{enumerate}
+
+\vspace{0.5cm}
+%
+% Ejercicio 2
+%
+\textbf{2.} Demostrar que la siguiente relación es de equivalencia e indicar quién es el conjunto cociente asociado. 
+Sea $A = \{(a, b) \mid a, b \in \mathbb{Z}, b \neq 0\}$ y $R$ la relación definida en $A$ tal que $(a, b) \sim (c, d)$ si y sólo si $ad = bc$.\\
+
+$P.d$ $R$ es reflexiva, simétrica y transitiva.\\
+
+\textit{R es reflexiva.}\\
+
+$\forall (a, b) \in A$ se debe satisfacer que $(a, b) \sim (a, b)$
+\begin{align*}
+    (a, b) &\sim (a, b)\\
+    ab &= ba \textit{ (por conmutación en ba)}\\
+    ab &= ab
+\end{align*}
+Así, decimos que $R$ es reflexiva.\\
+
+\textit{R es simétrica.}\\
+
+Si $(a, b) \sim (c, d)$ entonces se deberá satisfacer que $(c, d) \sim (a, b)$
+\begin{align*}
+    (a, b) &\sim (c, d)\\
+    ad &= cb \\
+    cb &= ad \textit{ (por conmutación en ad)}\\ 
+    cb &= da\\
+    (c, d) &\sim (a, b)
+\end{align*}
+Así, $R$ es simétrica.\\
+
+\textit{R es transitiva.}\\
+
+Si $(a, b) \sim (c, d)$ y $(c, d) \sim (e, f)$ entonces se deberá satisfacer que $(a, b) \sim (e, f)$
+\begin{align*}
+    (a, b) &\sim (c, d)\\
+    ad &= bc\\
+    \\
+    (c, d) &\sim (e, f)\\
+    cf &= de\\
+\end{align*}
+Por propiedades de los $\mathbb{Z}$
+\begin{align*}
+    ad \bullet cf &= bc \bullet de \textit{ (por cancelación del producto en $\mathbb{Z}$)}\\
+    af &= be\\
+    (a, b) &\sim (e, f)
+\end{align*}
+Así concluimos que $f$ es transitiva.\\
+\\
+$\therefore$ $R$ es de equivalencia.
+
+\vspace{0.5cm}
+%
+% Ejercicio 3
+%
+\textbf{3.} Diga cuál de las siguientes relaciones son funciones (justifica tu respuesta):
+\begin{enumerate}[label=\alph*)]
+    \item $R \subseteq \{1,2,3\} \times \{1,2,3\}$ definida como:\\
+    \begin{center}
+        $R = \{(1,2),(2,2),(3,3),(2,3),(1,1)\}$
+    \end{center}
+    No es función pues $1$ está relacionado con $1$ y $2$ y también $2$ está relacionada con $2$ y $3$.
+
+    \item $S \subseteq \mathbb{N} \times \mathbb{N}$ definida como:\\
+    \begin{center}
+        $S = \{(n,m) \mid n < m\}$
+    \end{center}
+    Es facil ver que si $n$ está en el dominio de $S$ y $n = 1$, entonces para cualquier $m > 1$ en el codominio tendremos que $n = 1$
+    va a satisfacer el estar relacionado con $m > 1$, con lo que $S$ no es función.
+    
+    \item $T \subseteq ( \mathbb{Z} \times \mathbb{Z} ) \times \mathbb{Z}$ definida como:\\
+    \begin{center}
+        $T = \{((n,m),n+m) \mid n, m \in \mathbb{Z}\}$
+    \end{center}
+    Como no puede ser que $m \neq m$ o $n \neq n$, el valor para $n + m$ debe ser unico.\\
+
+    Pensemos en una $m'$ que satisfaga $n + m = n + m'$
+    \begin{align*}
+        n + m &= n + m'\\
+        m &= m'
+    \end{align*}
+    Lo mismo ocurre con una $n'$ por lo que $n + m$ es un valor único.\\
+
+    $\therefore$ $f$ es función pues $n + m$ es un valor unico para cualquier $n, m \in \mathbb{Z}$.
+
+\end{enumerate}
+
+\vspace{0.5cm}
+%
+% Ejercicio 4
+%
+\textbf{4.} Sea ${\displaystyle f: \mathbb{Q} \longrightarrow \mathbb{Z}}$, con regla de correspondencia:\\
+\begin{center}
+    ${\displaystyle f(\frac{a}{b}) = a}$
+\end{center}
+Para toda $a.b \in \mathbb{Z}$, con $b \neq 0$. ¿Será que ${\displaystyle f}$ está bien definida?. Justifica tu respuesta.
+
+\vspace{0.5cm}
+%
+% Ejercicio 5
+%
+\textbf{5.} Sea ${\displaystyle f: A \longrightarrow B}$ y sean $Y_1, Y_2 \subseteq B$. Demuestra lo siguiente:
+\begin{enumerate}[label=\alph*)]
+    \item ${\displaystyle f^{-1}} [\varnothing] = \varnothing$
+    \item ${\displaystyle f^{-1}} [Y_1 \cup Y_2] = {\displaystyle f^{-1}}[Y_1] \cup {\displaystyle f^{-1}}[Y_2]$
+    \item ${\displaystyle f^{-1}} [Y_1 \cap Y_2] = {\displaystyle f^{-1}}[Y_1] \cap {\displaystyle f^{-1}}[Y_2]$
+    \item ${\displaystyle f^{-1}} [B] \backslash {\displaystyle f^{-1}} [Y_1] = {\displaystyle f^{-1}}[B \backslash Y_1]$
+\end{enumerate}
+
+\vspace{0.5cm}
+%
+% Ejercicio 6 
+%
+\textbf{6.} Da un contraejemplo de una función ${\displaystyle f: A \longrightarrow B}$ y $X_1, X_2 \subseteq A$ tales que:
+\begin{center}
+    ${\displaystyle f} [X_1 \cap X_2] \neq {\displaystyle f}[X_1] \cap {\displaystyle f}[X_2]$
+\end{center}
+
+\vspace{0.5cm}
+%
+% Ejercicio 7
+%
+\textbf{7.} Sean ${\displaystyle f: A \longrightarrow B}$ y ${\displaystyle g: B \longrightarrow C}$ funciones. Demuestre lo siguiente:
+\begin{enumerate}[label=\alph*)]
+    \item si ${\displaystyle f}$ y ${\displaystyle g}$ son inyectivas, entonces ${\displaystyle g \circ f}$ es inyectiva
+    \item si ${\displaystyle f}$ y ${\displaystyle g}$ son sobreyectivas, entonces ${\displaystyle g \circ f}$ es sobreyectiva
+    \item si ${\displaystyle f}$ y ${\displaystyle g}$ son biyectivas, entonces ${\displaystyle g \circ f}$ es biyectiva.
+\end{enumerate}
+
+\vspace{0.5cm}
+%
+% Ejercicio 8
+%
+\textbf{8.} Sean ${\displaystyle f: A \longrightarrow B}$ y ${\displaystyle g: B \longrightarrow C}$ funciones invertibles.
+\begin{enumerate}[label=\alph*)]
+    \item Demuestre que ${\displaystyle g \circ f}$ es invertibles
+    \item Demuestre que ${\displaystyle (g \circ f)^{-1}} = {\displaystyle f^{-1} \circ g^{-1}}$ 
+\end{enumerate}
+
+\vspace{0.5cm}
+% 
+% Ejercicio 9
+%
+\textbf{9.} Sea ${\displaystyle f: A \longrightarrow B}$ inyectiva. Demostrar que si $B$ es finito entonces $A$ es finito y $\# A \leq \#B$
+
+\vspace{0.5cm}
+%
+% ejercicio 10
+%
+\textbf{10.} Sea ${\displaystyle f: A \longrightarrow B}$ suprayectiva. Demostrar que si $A$ es finito entonces $B$ es finito y $\# B \leq \#A$
+
+\end{document}
